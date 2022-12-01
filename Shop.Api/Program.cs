@@ -1,4 +1,6 @@
+using MediatR;
 using Shop.Api.Helpers;
+using Shop.Application.Article.Query.GetArticleById;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.RegisterEndpoints();
+
+builder.Services.AddMediatR(typeof(GetArticleByIdQuery).Assembly);
 
 var app = builder.Build();
 
