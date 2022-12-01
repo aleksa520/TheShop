@@ -1,5 +1,6 @@
 using MediatR;
 using Shop.Api.Helpers;
+using Shop.Api.Logger;
 using Shop.Application.Article.Query.GetArticleById;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.RegisterEndpoints();
 
 builder.Services.AddMediatR(typeof(GetArticleByIdQuery).Assembly);
+builder.Services.AddSingleton<IDefaultLogger, DefaultLogger>();
 
 var app = builder.Build();
 
