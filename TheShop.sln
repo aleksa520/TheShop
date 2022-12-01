@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Api", "Shop.Api\Shop.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Domain", "Shop.Domain\Shop.Domain.csproj", "{20EB69E9-7CA4-46A1-A776-E2C131F98590}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Application", "Shop.Application\Shop.Application.csproj", "{377DBBF9-FD11-41BA-8177-AE80D23E6101}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{20EB69E9-7CA4-46A1-A776-E2C131F98590}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20EB69E9-7CA4-46A1-A776-E2C131F98590}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20EB69E9-7CA4-46A1-A776-E2C131F98590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{377DBBF9-FD11-41BA-8177-AE80D23E6101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{377DBBF9-FD11-41BA-8177-AE80D23E6101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{377DBBF9-FD11-41BA-8177-AE80D23E6101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{377DBBF9-FD11-41BA-8177-AE80D23E6101}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
