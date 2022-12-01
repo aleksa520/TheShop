@@ -1,12 +1,19 @@
 ﻿using MediatR;
+using Shop.Infrastructure.ArticleRepository;
 
 namespace Shop.Application.Article.Query.GetArticleById;
 
 public class GetArticleByIdQueryHandler : IRequestHandler<GetArticleByIdQuery, Domain.Model.Article>
 {
-    public Task<Domain.Model.Article> Handle(GetArticleByIdQuery request, CancellationToken cancellationToken)
+    private readonly IArticleRepository _articleRepository;
+
+    public GetArticleByIdQueryHandler(IArticleRepository articleRepository)
     {
-        var a = new Domain.Model.Article(1, "test", 123, true, DateTime.Now, 1);
-        return Task.FromResult(a);
+        _articleRepository = articleRepository;
+    }
+
+    public async Task<Domain.Model.Article> Handle(GetArticleByIdQuery request, CancellationToken cancellationToken)
+    {
+        return await _articleRepository.GetArticleById(request.Id);
     }
 }
