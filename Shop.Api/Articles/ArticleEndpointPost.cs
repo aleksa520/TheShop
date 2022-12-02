@@ -2,7 +2,7 @@
 using MediatR;
 using Shop.Api.Dtos;
 using Shop.Api.Interfaces;
-using Shop.Api.Logger;
+using Common.Logger.DefaultLogger;
 using Shop.Application.Article.Command.BuyArticle;
 
 namespace Shop.Api.Articles

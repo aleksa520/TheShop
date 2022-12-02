@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Shop.Api.Interfaces;
-using Shop.Api.Logger;
+using Common.Logger.DefaultLogger;
 using Shop.Application.Article.Query.GetArticleById;
 
 namespace Shop.Api.Articles;
