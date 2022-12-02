@@ -1,3 +1,4 @@
+using Common.Logger.DefaultLogger;
 using MediatR;
 using Vendor.Api.Helpers;
 
@@ -10,6 +11,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddMediatR(typeof(Program));
 builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Services.AddSingleton<IDefaultLogger, DefaultLogger>();
 
 builder.Services.RegisterEndpoints();
 

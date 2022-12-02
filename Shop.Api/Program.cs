@@ -1,6 +1,6 @@
+using Common.Logger.DefaultLogger;
 using MediatR;
 using Shop.Api.Helpers;
-using Shop.Api.Logger;
 using Shop.Api.MapperProfiles;
 using Shop.Application.Article.Query.GetArticleById;
 using Shop.Application.MapperProfiles;

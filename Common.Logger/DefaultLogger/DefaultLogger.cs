@@ -1,4 +1,4 @@
-﻿namespace Shop.Api.Logger;
+﻿namespace Common.Logger.DefaultLogger;
 
 public class DefaultLogger : IDefaultLogger
 {
