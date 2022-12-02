@@ -6,4 +6,5 @@ public interface IArticleRepository
 {
     Task<Article> GetArticle(int id);
     Task Save(Article article);
+    Task<IReadOnlyCollection<Article>> GetAll();
 }

@@ -16,6 +16,11 @@ public class ArticleRepository : IArticleRepository
         return await Task.FromResult(article!);
     }
 
+    public async Task<IReadOnlyCollection<Article>> GetAll()
+    {
+        return _articles;
+    }
+
     public async Task Save(Article article)
     {
         article.Id = _articles.Count + 1;
