@@ -10,7 +10,7 @@ public class ArticleRepository : IArticleRepository
         new Article(2, "BMW X1", 76900, false, default, 2)
     };
 
-    public async Task<Article> GetArticleById(int id)
+    public async Task<Article> GetArticle(int id)
     {
         var article =  _articles.FirstOrDefault(article => article.Id == id);
         return await Task.FromResult(article!);

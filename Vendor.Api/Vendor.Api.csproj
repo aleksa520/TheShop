@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common.Logger\Common.Logger.csproj" />
+    <ProjectReference Include="..\Vendor.Application\Vendor.Application.csproj" />
+    <ProjectReference Include="..\Vendor.Infrastructure\Vendor.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

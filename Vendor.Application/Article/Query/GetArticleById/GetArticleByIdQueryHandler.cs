@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Shop.Infrastructure.ArticleRepository;
+using Vendor.Infrastructure.ArticleRepository;
 
-namespace Shop.Application.Article.Query.GetArticleById;
+namespace Vendor.Application.Article.Query.GetArticleById;
 
 public class GetArticleByIdQueryHandler : IRequestHandler<GetArticleByIdQuery, Domain.Model.Article>
 {

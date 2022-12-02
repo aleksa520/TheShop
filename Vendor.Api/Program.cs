@@ -1,6 +1,9 @@
 using Common.Logger.DefaultLogger;
 using MediatR;
 using Vendor.Api.Helpers;
+using Vendor.Api.MapperProfiles;
+using Vendor.Application.Article.Query.GetArticleById;
+using Vendor.Infrastructure.ArticleRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,10 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddMediatR(typeof(Program));
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddMediatR(typeof(GetArticleByIdQuery).Assembly);
+builder.Services.AddAutoMapper(typeof(ArticleMapperProfile).Assembly);
 
 builder.Services.AddSingleton<IDefaultLogger, DefaultLogger>();
+builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 
 builder.Services.RegisterEndpoints();
 
