@@ -7,7 +7,7 @@ public class ArticleRepository : IArticleRepository
     private static List<Article> _articles = new()
     { 
         new Article(1, "Guitar", 990, false, default, 1),
-        new Article(2, "BMW X1", 76900, false, default, 2)
+        new Article(2, "BMW X1", 76900, true, default, 2)
     };
 
     public async Task<Article> GetArticle(int id)
