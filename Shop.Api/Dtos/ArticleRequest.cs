@@ -1,3 +1,3 @@
 ﻿namespace Shop.Api.Dtos;
 
-public record ArticleRequest(int Id, string Name, double Price, bool IsSold, DateTime SoldDate, int BuyerUserId);
+public record ArticleRequest(string Name, double Price, int BuyerUserId);

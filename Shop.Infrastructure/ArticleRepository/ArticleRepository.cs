@@ -18,6 +18,9 @@ public class ArticleRepository : IArticleRepository
 
     public async Task Save(Article article)
     {
+        article.Id = _articles.Count + 1;
+        article.IsSold = true;
+        article.SoldDate = DateTime.Now;
         _articles.Add(article);
     }
 }
