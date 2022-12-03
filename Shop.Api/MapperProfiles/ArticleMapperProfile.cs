@@ -11,6 +11,8 @@ public class ArticleMapperProfile : Profile
 	{
 		CreateMap<ArticleRequest, BuyArticleCommand>();
 
-        CreateMap<Article, ArticleResponse>();
+        CreateMap<Client.Dtos.ArticleResponse, Dtos.ArticleResponse>();
+
+        CreateMap<Article, Dtos.ArticleResponse>();
     }
 }
