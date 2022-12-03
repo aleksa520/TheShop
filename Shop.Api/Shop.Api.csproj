@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Common.Logger\Common.Logger.csproj" />
     <ProjectReference Include="..\Shop.Application\Shop.Application.csproj" />
+    <ProjectReference Include="..\Shop.Client\Shop.Client.csproj" />
     <ProjectReference Include="..\Shop.Infrastructure\Shop.Infrastructure.csproj" />
   </ItemGroup>
 

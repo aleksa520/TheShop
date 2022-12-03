@@ -9,12 +9,13 @@ public class ArticleClient : IArticleClient
 
     public ArticleClient(HttpClient httpClient)
     {
-        _httpClient = httpClient;
+        _httpClient = httpClient
+            ?? throw new ArgumentNullException(nameof(httpClient));
     }
 
     public async Task<ArticleResponse> GetArticle(int id)
     {
-        var article = await _httpClient.GetFromJsonAsync<ArticleResponse>($"https://localhost:7207/article{{id}}");
+        var article = await _httpClient.GetFromJsonAsync<ArticleResponse>($"/article/{{id}}");
         return article!;
     }
 }
