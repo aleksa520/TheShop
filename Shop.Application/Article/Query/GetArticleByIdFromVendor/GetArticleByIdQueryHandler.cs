@@ -4,7 +4,7 @@ using Shop.Client.Dtos;
 
 namespace Shop.Application.Article.Query.GetArticleByIdFromVendor;
 
-public class GetArticleByIdFromVendorQueryHandler : IRequestHandler<GetArticleByIdFromVendorQuery, ArticleResponse>
+public class GetArticleByIdFromVendorQueryHandler : IRequestHandler<GetArticleByIdFromVendorQuery, ArticleResponse?>
 {
     private readonly IArticleClient _articleClient;
 
@@ -13,7 +13,7 @@ public class GetArticleByIdFromVendorQueryHandler : IRequestHandler<GetArticleBy
         _articleClient = articleClient;
     }
 
-    public async Task<ArticleResponse> Handle(GetArticleByIdFromVendorQuery request, CancellationToken cancellationToken)
+    public async Task<ArticleResponse?> Handle(GetArticleByIdFromVendorQuery request, CancellationToken cancellationToken)
     {
         return await _articleClient.GetArticle(request.Id);
     }

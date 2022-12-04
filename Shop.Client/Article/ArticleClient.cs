@@ -15,9 +15,18 @@ public class ArticleClient : IArticleClient
             ?? throw new ArgumentNullException(nameof(httpClient));     
     }
 
-    public async Task<ArticleResponse> GetArticle(int id)
+    public async Task<ArticleResponse?> GetArticle(int id)
     {
-        var article = await _httpClient.GetFromJsonAsync<ArticleResponse>(PATH.AppendPathSegment(id));
-        return article!;
+        var response = await _httpClient.GetAsync(PATH.AppendPathSegment(id));
+        if (response.IsSuccessStatusCode)
+        {
+            return await response.Content.ReadFromJsonAsync<ArticleResponse>();
+        }
+        else
+        {
+            if(response.StatusCode == System.Net.HttpStatusCode.NotFound) { return null; }
+        }
+
+        throw new Exception("Inner exception");
     }
 }

@@ -27,7 +27,12 @@ public class ArticleEndpointGet : IEndpoint
         {
             _logger.Info($"Getting article {articleId} from Vendor");
             var article = await _mediator.Send(new GetArticleByIdQuery(articleId));
-            return _mapper.Map<Article, ArticleResponse>(article);
+            if(article is null )
+            {
+                _logger.Info($"Article {articleId} is not in inventory");
+                return Results.NotFound();
+            }
+            return Results.Ok(_mapper.Map<Article, ArticleResponse>(article));
         });
     }
 }

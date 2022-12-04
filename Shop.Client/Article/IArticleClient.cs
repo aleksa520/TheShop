@@ -4,5 +4,5 @@ namespace Shop.Client.Article;
 
 public interface IArticleClient
 {
-    Task<ArticleResponse> GetArticle(int id);
+    Task<ArticleResponse?> GetArticle(int id);
 }

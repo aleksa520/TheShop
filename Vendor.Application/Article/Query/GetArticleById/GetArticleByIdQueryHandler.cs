@@ -3,7 +3,7 @@ using Vendor.Infrastructure.ArticleRepository;
 
 namespace Vendor.Application.Article.Query.GetArticleById;
 
-public class GetArticleByIdQueryHandler : IRequestHandler<GetArticleByIdQuery, Domain.Model.Article>
+public class GetArticleByIdQueryHandler : IRequestHandler<GetArticleByIdQuery, Domain.Model.Article?>
 {
     private readonly IArticleRepository _articleRepository;
 
@@ -12,8 +12,12 @@ public class GetArticleByIdQueryHandler : IRequestHandler<GetArticleByIdQuery, D
         _articleRepository = articleRepository;
     }
 
-    public async Task<Domain.Model.Article> Handle(GetArticleByIdQuery request, CancellationToken cancellationToken)
+    public async Task<Domain.Model.Article?> Handle(GetArticleByIdQuery request, CancellationToken cancellationToken)
     {
-        return await _articleRepository.GetArticle(request.Id);
+        if (await _articleRepository.ArticleInInventory(request.Id))
+        {
+            return await _articleRepository.GetArticle(request.Id);
+        }
+        return null;
     }
 }

@@ -31,9 +31,9 @@ public class ArticleEndpointGet : IEndpoint
             if(articleFromShop == null)
             {
                 var articleFromVendor = await _mediator.Send(new GetArticleByIdFromVendorQuery(articleId));
-                return _mapper.Map<Client.Dtos.ArticleResponse, Dtos.ArticleResponse>(articleFromVendor);
+                return _mapper.Map<Client.Dtos.ArticleResponse, ArticleResponse>(articleFromVendor);
             }
-            return _mapper.Map<Domain.Model.Article, Dtos.ArticleResponse>(articleFromShop);
+            return _mapper.Map<Domain.Model.Article, ArticleResponse>(articleFromShop);
         });
 
         app.MapGet($"article", async () =>
