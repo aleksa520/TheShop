@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Common.Logger.DefaultLogger;
 using MediatR;
 using Vendor.Api.Dtos;
 using Vendor.Api.Interfaces;
@@ -11,17 +12,20 @@ public class ArticleEndpointGet : IEndpoint
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
+    private readonly IDefaultLogger _logger;
 
-    public ArticleEndpointGet(IMediator mediator, IMapper mapper)
+    public ArticleEndpointGet(IMediator mediator, IMapper mapper, IDefaultLogger logger)
     {
         _mediator = mediator;
         _mapper = mapper;
+        _logger = logger;
     }
 
     public void MapEndpoints(IEndpointRouteBuilder app)
     {
         app.MapGet($"article/{{articleId}}", async (int articleId) =>
         {
+            _logger.Info($"Getting article {articleId} from Vendor");
             var article = await _mediator.Send(new GetArticleByIdQuery(articleId));
             return _mapper.Map<Article, ArticleResponse>(article);
         });
