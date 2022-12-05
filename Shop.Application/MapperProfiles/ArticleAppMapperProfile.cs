@@ -9,7 +9,10 @@ public class ArticleAppMapperProfile : Profile
     public ArticleAppMapperProfile()
     {
         CreateMap<BuyArticleCommand, Domain.Model.Article>().DisableCtorValidation();
+        CreateMap<BuyArticleCommand, Domain.Model.Article>().DisableCtorValidation();
+        CreateMap<Client.Dtos.ArticleResponse, Domain.Model.Article>().DisableCtorValidation();
 
         CreateMap<Domain.Model.Article, ArticleResponse>().DisableCtorValidation();
+        CreateMap<Client.Dtos.ArticleResponse, ArticleResponse>().DisableCtorValidation();
     }
 }
