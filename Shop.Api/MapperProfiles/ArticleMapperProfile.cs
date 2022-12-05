@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Shop.Api.Dtos;
 using Shop.Application.Article.Command.BuyArticle;
+using Shop.Application.Dtos;
 using Shop.Domain.Model;
 
 namespace Shop.Api.MapperProfiles;
@@ -11,8 +11,8 @@ public class ArticleMapperProfile : Profile
 	{
 		CreateMap<ArticleRequest, BuyArticleCommand>();
 
-        CreateMap<Client.Dtos.ArticleResponse, Dtos.ArticleResponse>();
+        CreateMap<Client.Dtos.ArticleResponse, ArticleResponse>();
 
-        CreateMap<Article, Dtos.ArticleResponse>();
+        CreateMap<Article, ArticleResponse>();
     }
 }

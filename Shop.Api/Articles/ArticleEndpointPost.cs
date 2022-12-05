@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
-using Shop.Api.Dtos;
 using Shop.Api.Interfaces;
 using Common.Logger.DefaultLogger;
 using Shop.Application.Article.Command.BuyArticle;
+using Shop.Application.Dtos;
 
 namespace Shop.Api.Articles
 {

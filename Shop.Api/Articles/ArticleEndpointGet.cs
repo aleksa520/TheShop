@@ -4,8 +4,7 @@ using Common.Logger.DefaultLogger;
 using Shop.Application.Article.Query.GetArticleById;
 using Shop.Application.Article.Query.GetAllArticles;
 using AutoMapper;
-using Shop.Api.Dtos;
-using Shop.Application.Article.Query.GetArticleByIdFromVendor;
+using Shop.Application.Dtos;
 
 namespace Shop.Api.Articles;
 
@@ -27,13 +26,7 @@ public class ArticleEndpointGet : IEndpoint
         app.MapGet($"article/{{articleId}}", async (int articleId) =>
         {
             _logger.Info($"Getting article with id:{articleId}");
-            var articleFromShop = await _mediator.Send(new GetArticleByIdQuery(articleId));
-            if(articleFromShop == null)
-            {
-                var articleFromVendor = await _mediator.Send(new GetArticleByIdFromVendorQuery(articleId));
-                return _mapper.Map<Client.Dtos.ArticleResponse, ArticleResponse>(articleFromVendor);
-            }
-            return _mapper.Map<Domain.Model.Article, ArticleResponse>(articleFromShop);
+            return await _mediator.Send(new GetArticleByIdQuery(articleId));
         });
 
         app.MapGet($"article", async () =>
