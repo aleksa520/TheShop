@@ -5,6 +5,7 @@ using Shop.Api.MapperProfiles;
 using Shop.Application.Article.Query.GetArticleById;
 using Shop.Application.MapperProfiles;
 using Shop.Client.Article;
+using Shop.Client.Options.HttpClient;
 using Shop.Infrastructure.ArticleRepository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,10 +24,11 @@ builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 builder.Services.AddAutoMapper(typeof(ArticleMapperProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(ArticleAppMapperProfile).Assembly);
 
-builder.Services.AddArticleApiClient(httpClient =>
-{
-    httpClient.BaseAddress = new(builder.Configuration.GetSection("Vendor").GetSection("BaseUrl").Get<string>());
-});
+builder.Services.Configure<HttpClientOptions>(
+    builder.Configuration.GetSection(HttpClientOptions.SectionName));
+
+builder.Services.AddHttpClientsFromConfig(builder.Configuration);
+
 
 var app = builder.Build();
 
