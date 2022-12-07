@@ -16,7 +16,7 @@ builder.Services.AddMediatR(typeof(GetArticleByIdQuery).Assembly);
 builder.Services.AddAutoMapper(typeof(ArticleMapperProfile).Assembly);
 
 builder.Services.AddSingleton<IDefaultLogger, DefaultLogger>();
-builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 
 builder.Services.RegisterEndpoints();
 

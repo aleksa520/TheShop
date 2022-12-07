@@ -20,8 +20,8 @@ builder.Services.RegisterEndpoints();
 
 builder.Services.AddMediatR(typeof(GetArticleByIdQuery).Assembly);
 builder.Services.AddSingleton<IDefaultLogger, DefaultLogger>();
-builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
-builder.Services.AddTransient<ICachedSupplier, CachedSupplier>();
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
+builder.Services.AddScoped<ICachedSupplier, CachedSupplier>();
 
 builder.Services.AddAutoMapper(typeof(ArticleMapperProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(ArticleAppMapperProfile).Assembly);
