@@ -1,9 +1,13 @@
 using Common.Logger.DefaultLogger;
+using FluentValidation;
 using MediatR;
 using Shop.Api.Helpers;
 using Shop.Api.MapperProfiles;
+using Shop.Api.Middlewares;
+using Shop.Application.Article.Command.BuyArticle;
 using Shop.Application.Article.Query.GetArticleById;
 using Shop.Application.MapperProfiles;
+using Shop.Application.PipelineBehaviours;
 using Shop.Client.Article;
 using Shop.Client.Options.HttpClient;
 using Shop.Infrastructure.ArticleRepository;
@@ -16,9 +20,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
 builder.Services.RegisterEndpoints();
 
 builder.Services.AddMediatR(typeof(GetArticleByIdQuery).Assembly);
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+builder.Services.AddValidatorsFromAssembly(typeof(BuyArticleCommand).Assembly);
+
 builder.Services.AddSingleton<IDefaultLogger, DefaultLogger>();
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddScoped<ICachedSupplier, CachedSupplier>();
@@ -44,5 +53,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.AddEndpoints();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.Run();

@@ -8,7 +8,6 @@ public class BuyArticleCommandValidator : AbstractValidator<BuyArticleCommand>
 	{
 		RuleFor(a => a).NotNull();
 		RuleFor(a => a.Name).NotEmpty();
-		RuleFor(a => a.Price).NotEmpty();
-		RuleFor(a => a.BuyerUserId).NotEmpty();
-	}
+		RuleFor(a => a.Price).GreaterThan(0);
+    }
 }
