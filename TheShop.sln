@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.WebApi", "Shop.WebApi\Shop.WebApi.csproj", "{933FE982-F618-4E84-BEB4-C93B11266A97}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vendor.WebApi", "Vendor.WebApi\Vendor.WebApi.csproj", "{E8EBFDC2-8A81-400E-BDFF-79246DDD3231}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Api", "Shop.Api\Shop.Api.csproj", "{B19214C7-CD61-4158-897F-50CBE5BEE0AF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Domain", "Shop.Domain\Shop.Domain.csproj", "{20EB69E9-7CA4-46A1-A776-E2C131F98590}"
@@ -21,17 +17,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shop", "Shop", "{DDAEB1C7-D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vendor", "Vendor", "{90ADC549-D730-456D-976E-35FD433542DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vendor.Application", "Vendor.Application\Vendor.Application.csproj", "{BCE6C8BD-172C-424F-BF62-FACB758DEBF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vendor.Application", "Vendor.Application\Vendor.Application.csproj", "{BCE6C8BD-172C-424F-BF62-FACB758DEBF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vendor.Domain", "Vendor.Domain\Vendor.Domain.csproj", "{D342A121-F613-4B09-89A3-4649E2A4DC18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vendor.Domain", "Vendor.Domain\Vendor.Domain.csproj", "{D342A121-F613-4B09-89A3-4649E2A4DC18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vendor.Infrastructure", "Vendor.Infrastructure\Vendor.Infrastructure.csproj", "{769C0AAC-4DA9-4134-8768-96B6007674D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vendor.Infrastructure", "Vendor.Infrastructure\Vendor.Infrastructure.csproj", "{769C0AAC-4DA9-4134-8768-96B6007674D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{42C637CC-E35C-4BA0-B8DB-9C58BEAC147A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logger", "Common.Logger\Common.Logger.csproj", "{6776C751-FAE2-4749-9DAE-CF75D7B178CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Logger", "Common.Logger\Common.Logger.csproj", "{6776C751-FAE2-4749-9DAE-CF75D7B178CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Client", "Shop.Client\Shop.Client.csproj", "{3FBDA484-510E-4F1E-8C0D-4945182CB084}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Client", "Shop.Client\Shop.Client.csproj", "{3FBDA484-510E-4F1E-8C0D-4945182CB084}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,14 +35,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{933FE982-F618-4E84-BEB4-C93B11266A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{933FE982-F618-4E84-BEB4-C93B11266A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{933FE982-F618-4E84-BEB4-C93B11266A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{933FE982-F618-4E84-BEB4-C93B11266A97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E8EBFDC2-8A81-400E-BDFF-79246DDD3231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8EBFDC2-8A81-400E-BDFF-79246DDD3231}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8EBFDC2-8A81-400E-BDFF-79246DDD3231}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8EBFDC2-8A81-400E-BDFF-79246DDD3231}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B19214C7-CD61-4158-897F-50CBE5BEE0AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B19214C7-CD61-4158-897F-50CBE5BEE0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B19214C7-CD61-4158-897F-50CBE5BEE0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
